@@ -1,10 +1,10 @@
-import React from 'react';
-import { ArrowRight, Sparkles, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Sparkles, FileText, User } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import { PythonFrame } from './PythonFrame';
 import { personalInfo } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
+  const [imageError, setImageError] = useState(false);
 
   return (
     <section
@@ -27,9 +27,9 @@ export const Hero: React.FC = () => {
             alignItems: 'center',
           }}
         >
-          {/* Left Column: Typography & CTAs (Matched to reference layout) */}
+          {/* Left Column: Typography & CTAs */}
           <div style={{ maxWidth: '580px' }}>
-            {/* Tag Pill with Sparkle (Matched to '✨ Graphic Designer') */}
+            {/* Tag Pill with Sparkle */}
             <div
               style={{
                 display: 'inline-flex',
@@ -49,7 +49,7 @@ export const Hero: React.FC = () => {
               <span>{personalInfo.title}</span>
             </div>
 
-            {/* Headline (Matched to 'Hi, I'm Fatima!') */}
+            {/* Headline */}
             <h1
               className="hero-greeting"
               style={{
@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
               clean database architectures, and scalable web solutions that power modern applications.
             </p>
 
-            {/* Pill Action Buttons (Matched to 'View My Work ->' & 'Get in Touch') */}
+            {/* Pill Action Buttons */}
             <div
               style={{
                 display: 'flex',
@@ -191,8 +191,102 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Custom Python Logo Frame */}
-          <PythonFrame />
+          {/* Right Column: Clean, Elegant Square Frame */}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <div
+              style={{
+                position: 'relative',
+                width: '100%',
+                maxWidth: '340px',
+              }}
+            >
+              {/* Square Portrait Container */}
+              <div
+                style={{
+                  width: '100%',
+                  aspectRatio: '1 / 1',
+                  borderRadius: '18px',
+                  backgroundColor: '#FFFFFF',
+                  border: '8px solid #FFFFFF',
+                  boxShadow: '0 16px 36px -8px rgba(53, 35, 27, 0.14), 0 4px 12px rgba(53, 35, 27, 0.06)',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                {!imageError ? (
+                  <img
+                    src="/profile.jpg"
+                    alt={personalInfo.name}
+                    onError={() => setImageError(true)}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center 22%',
+                      borderRadius: '10px',
+                      display: 'block',
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      padding: '2rem',
+                      textAlign: 'center',
+                      color: 'var(--text-secondary)',
+                    }}
+                  >
+                    <User size={64} style={{ color: 'var(--text-primary)', marginBottom: '0.75rem' }} />
+                    <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Ashish Sharma</div>
+                    <div style={{ fontSize: '0.8125rem' }}>Python Backend Developer</div>
+                  </div>
+                )}
+              </div>
+
+              {/* Signature Floating Badge at Bottom Corner */}
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: '-14px',
+                  left: '-14px',
+                  backgroundColor: '#FFFFFF',
+                  padding: '0.5rem 1.125rem',
+                  borderRadius: '14px',
+                  boxShadow: '0 8px 20px -4px rgba(53, 35, 27, 0.12)',
+                  border: '1px solid var(--border-color)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  zIndex: 2,
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-script)',
+                    fontSize: '1.4rem',
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    whiteSpace: 'nowrap',
+                    lineHeight: 1,
+                  }}
+                >
+                  APIs with purpose ✨
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
