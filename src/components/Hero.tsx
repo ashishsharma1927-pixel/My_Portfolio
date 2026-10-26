@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles, FileText, User } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Sparkles, FileText } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
+import { PythonFrame } from './PythonFrame';
 import { personalInfo } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
-  const [imageError, setImageError] = useState(false);
 
   return (
     <section
@@ -191,101 +191,8 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Signature Arched Portrait Frame (Matched to Reference Image) */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              position: 'relative',
-            }}
-          >
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                maxWidth: '360px',
-              }}
-            >
-              {/* Arched Portrait Container */}
-              <div
-                style={{
-                  width: '100%',
-                  aspectRatio: '0.82',
-                  borderRadius: '190px 190px 24px 24px',
-                  backgroundColor: 'var(--bg-subtle)',
-                  border: '8px solid #FFFFFF',
-                  boxShadow: 'var(--shadow-portrait)',
-                  overflow: 'hidden',
-                  position: 'relative',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                {!imageError ? (
-                  <img
-                    src="/profile.jpg"
-                    alt={personalInfo.name}
-                    onError={() => setImageError(true)}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      display: 'block',
-                    }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      padding: '2rem',
-                      textAlign: 'center',
-                      color: 'var(--text-secondary)',
-                    }}
-                  >
-                    <User size={64} style={{ color: 'var(--text-primary)', marginBottom: '0.75rem' }} />
-                    <div style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Ashish Sharma</div>
-                    <div style={{ fontSize: '0.8125rem' }}>Python Backend Developer</div>
-                  </div>
-                )}
-              </div>
-
-              {/* Signature Floating Badge (Matched to 'Designs with purpose') */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: '-12px',
-                  left: '-16px',
-                  backgroundColor: '#FFFFFF',
-                  padding: '0.625rem 1.25rem',
-                  borderRadius: '14px',
-                  boxShadow: '0 10px 25px -4px rgba(53, 35, 27, 0.12)',
-                  border: '1px solid var(--border-color)',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  zIndex: 2,
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: 'var(--font-script)',
-                    fontSize: '1.45rem',
-                    fontWeight: 700,
-                    color: 'var(--text-primary)',
-                    whiteSpace: 'nowrap',
-                    lineHeight: 1,
-                  }}
-                >
-                  APIs with purpose ✨
-                </span>
-              </div>
-            </div>
-          </div>
+          {/* Right Column: Custom Python Logo Frame */}
+          <PythonFrame />
         </div>
       </div>
 
