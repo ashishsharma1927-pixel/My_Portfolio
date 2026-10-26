@@ -36,7 +36,7 @@ export const Contact: React.FC = () => {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '1.5rem',
+              gap: '1.75rem',
             }}
           >
             {/* Email Actions */}
@@ -45,14 +45,14 @@ export const Contact: React.FC = () => {
                 display: 'flex',
                 flexWrap: 'wrap',
                 justifyContent: 'center',
-                gap: '0.875rem',
+                gap: '1rem',
                 width: '100%',
               }}
             >
               <a
                 href={`mailto:${personalInfo.email}?subject=Backend%20Developer%20Inquiry%20-%20Ashish%20Sharma`}
                 className="btn btn-primary"
-                style={{ padding: '0.75rem 1.75rem', fontSize: '1rem' }}
+                style={{ padding: '0.8125rem 1.75rem', fontSize: '1rem' }}
               >
                 <Mail size={18} />
                 Send an Email
@@ -63,13 +63,13 @@ export const Contact: React.FC = () => {
                 type="button"
                 onClick={handleCopyEmail}
                 className="btn btn-secondary"
-                style={{ padding: '0.75rem 1.25rem', fontSize: '0.9375rem' }}
+                style={{ padding: '0.8125rem 1.375rem', fontSize: '0.9375rem' }}
                 aria-label="Copy email address"
               >
                 {copied ? (
                   <>
-                    <Check size={16} style={{ color: '#10B981' }} />
-                    <span style={{ color: '#10B981', fontWeight: 600 }}>Copied to Clipboard!</span>
+                    <Check size={16} style={{ color: '#2D6A4F' }} />
+                    <span style={{ color: '#2D6A4F', fontWeight: 700 }}>Copied to Clipboard!</span>
                   </>
                 ) : (
                   <>
@@ -87,25 +87,23 @@ export const Contact: React.FC = () => {
                 flexWrap: 'wrap',
                 justifyContent: 'center',
                 gap: '1.75rem',
-                paddingTop: '1rem',
+                paddingTop: '1.25rem',
                 borderTop: '1px solid var(--border-color)',
                 width: '100%',
-                fontSize: '0.875rem',
+                fontSize: '0.9375rem',
                 color: 'var(--text-secondary)',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                <MapPin size={15} style={{ color: 'var(--color-accent)' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <MapPin size={16} style={{ color: 'var(--text-primary)' }} />
                 <span>{personalInfo.location}</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                <Phone size={15} style={{ color: 'var(--color-accent)' }} />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <Phone size={16} style={{ color: 'var(--text-primary)' }} />
                 <a
                   href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                  style={{ color: 'var(--text-secondary)' }}
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)')}
+                  style={{ color: 'var(--text-primary)', fontWeight: 600 }}
                 >
                   {personalInfo.phone}
                 </a>
@@ -118,8 +116,8 @@ export const Contact: React.FC = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '1.25rem',
-                paddingTop: '0.5rem',
+                gap: '1rem',
+                paddingTop: '0.25rem',
               }}
             >
               <a

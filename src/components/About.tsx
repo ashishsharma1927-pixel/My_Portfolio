@@ -5,18 +5,18 @@ import { personalInfo } from '../data/portfolioData';
 export const About: React.FC = () => {
   const infoCards = [
     {
-      icon: <MapPin size={20} style={{ color: 'var(--color-accent)' }} />,
+      icon: <MapPin size={20} style={{ color: 'var(--text-primary)' }} />,
       label: 'Location',
       value: personalInfo.location,
     },
     {
-      icon: <GraduationCap size={20} style={{ color: 'var(--color-accent)' }} />,
+      icon: <GraduationCap size={20} style={{ color: 'var(--text-primary)' }} />,
       label: 'Education',
       value: 'B.Sc. Mathematics',
       subtext: 'Himachal Pradesh University',
     },
     {
-      icon: <Cpu size={20} style={{ color: 'var(--color-accent)' }} />,
+      icon: <Cpu size={20} style={{ color: 'var(--text-primary)' }} />,
       label: 'Focus',
       value: 'Backend Development',
       subtext: 'APIs & Relational Databases',
@@ -73,12 +73,13 @@ export const About: React.FC = () => {
                   display: 'flex',
                   alignItems: 'flex-start',
                   gap: '0.875rem',
+                  boxShadow: 'var(--shadow-subtle)',
                 }}
               >
                 <div
                   style={{
                     padding: '0.5rem',
-                    backgroundColor: 'var(--card-bg)',
+                    backgroundColor: 'var(--bg-subtle)',
                     borderRadius: 'var(--radius-sm)',
                     border: '1px solid var(--border-color)',
                     display: 'flex',
@@ -93,7 +94,7 @@ export const About: React.FC = () => {
                   <div
                     style={{
                       fontSize: '0.75rem',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       textTransform: 'uppercase',
                       letterSpacing: '0.05em',
                       color: 'var(--text-secondary)',
@@ -105,7 +106,7 @@ export const About: React.FC = () => {
                   <div
                     style={{
                       fontSize: '0.9375rem',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       color: 'var(--text-primary)',
                       lineHeight: 1.3,
                     }}

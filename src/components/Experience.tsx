@@ -21,8 +21,9 @@ export const Experience: React.FC = () => {
               key={exp.id}
               className="card"
               style={{
-                padding: '1.75rem',
-                borderLeft: '4px solid var(--color-accent)',
+                padding: '2rem',
+                borderLeft: '4px solid var(--text-primary)',
+                borderRadius: 'var(--radius-md)',
               }}
             >
               {/* Role & Company Header */}
@@ -33,28 +34,28 @@ export const Experience: React.FC = () => {
                   alignItems: 'baseline',
                   justifyContent: 'space-between',
                   gap: '0.75rem',
-                  marginBottom: '1rem',
+                  marginBottom: '1.25rem',
                 }}
               >
                 <div>
                   <h3
                     style={{
-                      fontSize: '1.25rem',
-                      fontWeight: 700,
+                      fontSize: '1.3125rem',
+                      fontWeight: 800,
                       color: 'var(--text-primary)',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '0.5rem',
+                      gap: '0.625rem',
                     }}
                   >
-                    <Briefcase size={18} style={{ color: 'var(--color-accent)' }} />
+                    <Briefcase size={20} style={{ color: 'var(--text-primary)' }} />
                     {exp.role}
                   </h3>
                   <div
                     style={{
-                      fontSize: '1rem',
-                      fontWeight: 600,
-                      color: 'var(--color-accent)',
+                      fontSize: '1.0625rem',
+                      fontWeight: 700,
+                      color: 'var(--text-secondary)',
                       marginTop: '0.25rem',
                     }}
                   >
@@ -67,13 +68,13 @@ export const Experience: React.FC = () => {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '0.375rem',
-                    padding: '0.25rem 0.625rem',
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: '#F1F5F9',
+                    padding: '0.3125rem 0.75rem',
+                    borderRadius: 'var(--radius-pill)',
+                    backgroundColor: 'var(--bg-subtle)',
                     border: '1px solid var(--border-color)',
                     fontSize: '0.8125rem',
-                    color: 'var(--text-secondary)',
-                    fontWeight: 500,
+                    color: 'var(--text-primary)',
+                    fontWeight: 600,
                   }}
                 >
                   <Calendar size={13} />
@@ -105,7 +106,7 @@ export const Experience: React.FC = () => {
                     <CheckCircle2
                       size={16}
                       style={{
-                        color: 'var(--color-accent)',
+                        color: 'var(--text-primary)',
                         flexShrink: 0,
                         marginTop: '0.25rem',
                       }}

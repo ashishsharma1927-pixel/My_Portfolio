@@ -6,17 +6,17 @@ export const Skills: React.FC = () => {
   const getCategoryIcon = (title: string) => {
     switch (title) {
       case 'Backend':
-        return <Server size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Server size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Databases':
-        return <Database size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Database size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Background Tasks & Caching':
-        return <Zap size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Zap size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Testing & Development Tools':
-        return <Wrench size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Wrench size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Deployment & IDE':
-        return <Cloud size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Cloud size={18} style={{ color: 'var(--text-primary)' }} />;
       default:
-        return <Server size={18} style={{ color: 'var(--color-accent)' }} />;
+        return <Server size={18} style={{ color: 'var(--text-primary)' }} />;
     }
   };
 
@@ -47,7 +47,8 @@ export const Skills: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1rem',
-                padding: '1.25rem',
+                padding: '1.5rem',
+                borderRadius: 'var(--radius-md)',
               }}
             >
               {/* Category Header */}
@@ -55,8 +56,8 @@ export const Skills: React.FC = () => {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '0.625rem',
-                  paddingBottom: '0.625rem',
+                  gap: '0.75rem',
+                  paddingBottom: '0.75rem',
                   borderBottom: '1px solid var(--border-color)',
                 }}
               >
@@ -65,19 +66,19 @@ export const Skills: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '32px',
-                    height: '32px',
-                    borderRadius: 'var(--radius-sm)',
-                    backgroundColor: 'var(--color-accent-subtle)',
-                    border: '1px solid var(--color-accent-border)',
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: 'var(--radius-pill)',
+                    backgroundColor: 'var(--bg-subtle)',
+                    border: '1px solid var(--border-color)',
                   }}
                 >
                   {getCategoryIcon(category.title)}
                 </div>
                 <h3
                   style={{
-                    fontSize: '0.9375rem',
-                    fontWeight: 600,
+                    fontSize: '1rem',
+                    fontWeight: 700,
                     color: 'var(--text-primary)',
                   }}
                 >
@@ -101,13 +102,12 @@ export const Skills: React.FC = () => {
                       alignItems: 'center',
                       gap: '0.375rem',
                       fontSize: '0.8125rem',
-                      fontWeight: 500,
-                      padding: '0.3125rem 0.625rem',
-                      borderRadius: 'var(--radius-sm)',
-                      backgroundColor: '#F8FAFC',
+                      fontWeight: 600,
+                      padding: '0.375rem 0.75rem',
+                      borderRadius: 'var(--radius-pill)',
+                      backgroundColor: 'var(--bg-main)',
                       border: '1px solid var(--border-color)',
                       color: 'var(--text-primary)',
-                      fontFamily: 'var(--font-sans)',
                     }}
                   >
                     <span
@@ -115,7 +115,7 @@ export const Skills: React.FC = () => {
                         width: '5px',
                         height: '5px',
                         borderRadius: '50%',
-                        backgroundColor: 'var(--color-accent)',
+                        backgroundColor: 'var(--text-primary)',
                       }}
                     />
                     {skill.name}

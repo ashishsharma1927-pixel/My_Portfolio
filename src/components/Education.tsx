@@ -28,11 +28,14 @@ export const Education: React.FC = () => {
               key={edu.id}
               className="card"
               style={{
-                padding: '1.25rem',
+                padding: '1.5rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                gap: '0.75rem',
+                gap: '0.875rem',
+                backgroundColor: 'var(--bg-main)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
               }}
             >
               <div>
@@ -41,7 +44,7 @@ export const Education: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: '0.375rem',
+                    marginBottom: '0.5rem',
                   }}
                 >
                   <span
@@ -49,24 +52,27 @@ export const Education: React.FC = () => {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '0.375rem',
-                      fontSize: '0.75rem',
-                      fontWeight: 600,
-                      color: 'var(--color-accent)',
+                      fontSize: '0.78125rem',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      backgroundColor: 'var(--bg-subtle)',
+                      padding: '0.2rem 0.6rem',
+                      borderRadius: 'var(--radius-pill)',
                     }}
                   >
-                    <GraduationCap size={15} />
+                    <GraduationCap size={14} />
                     {edu.durationOrYear}
                   </span>
                   {edu.scoreOrDetail && edu.scoreOrDetail.includes('Score') && (
                     <span
                       style={{
                         fontSize: '0.75rem',
-                        fontWeight: 600,
-                        backgroundColor: '#ECFDF5',
-                        color: '#059669',
-                        padding: '0.125rem 0.375rem',
-                        borderRadius: 'var(--radius-sm)',
-                        border: '1px solid #A7F3D0',
+                        fontWeight: 700,
+                        backgroundColor: '#E8F5E9',
+                        color: '#2D6A4F',
+                        padding: '0.15rem 0.5rem',
+                        borderRadius: 'var(--radius-pill)',
+                        border: '1px solid #C8E6C9',
                       }}
                     >
                       {edu.scoreOrDetail}
@@ -76,8 +82,8 @@ export const Education: React.FC = () => {
 
                 <h3
                   style={{
-                    fontSize: '1rem',
-                    fontWeight: 700,
+                    fontSize: '1.0625rem',
+                    fontWeight: 800,
                     color: 'var(--text-primary)',
                     marginBottom: '0.25rem',
                   }}
@@ -89,7 +95,7 @@ export const Education: React.FC = () => {
                   style={{
                     fontSize: '0.875rem',
                     color: 'var(--text-secondary)',
-                    lineHeight: 1.4,
+                    lineHeight: 1.45,
                   }}
                 >
                   {edu.institution}
@@ -101,14 +107,14 @@ export const Education: React.FC = () => {
                   style={{
                     fontSize: '0.8125rem',
                     color: 'var(--text-secondary)',
-                    borderTop: '1px solid #F1F5F9',
-                    paddingTop: '0.5rem',
+                    borderTop: '1px solid var(--border-color)',
+                    paddingTop: '0.625rem',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.375rem',
                   }}
                 >
-                  <Award size={13} style={{ color: 'var(--color-accent)' }} />
+                  <Award size={14} style={{ color: 'var(--text-primary)' }} />
                   <span>{edu.scoreOrDetail}</span>
                 </div>
               )}

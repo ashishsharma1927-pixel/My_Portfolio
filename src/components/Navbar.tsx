@@ -5,23 +5,38 @@ import { personalInfo } from '../data/portfolioData';
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      // Section spy
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'contact'];
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 120 && rect.bottom >= 120) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Education', href: '#education' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: '#home', id: 'home' },
+    { label: 'About', href: '#about', id: 'about' },
+    { label: 'Skills', href: '#skills', id: 'skills' },
+    { label: 'Projects', href: '#projects', id: 'projects' },
+    { label: 'Experience', href: '#experience', id: 'experience' },
+    { label: 'Education', href: '#education', id: 'education' },
+    { label: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   const handleLinkClick = () => {
@@ -38,8 +53,8 @@ export const Navbar: React.FC = () => {
         right: 0,
         height: 'var(--nav-height)',
         zIndex: 50,
-        backgroundColor: scrolled ? 'rgba(248, 250, 252, 0.94)' : 'rgba(248, 250, 252, 0.8)',
-        backdropFilter: 'blur(8px)',
+        backgroundColor: scrolled ? 'rgba(244, 239, 234, 0.95)' : 'rgba(244, 239, 234, 0.85)',
+        backdropFilter: 'blur(10px)',
         borderBottom: scrolled ? '1px solid var(--border-color)' : '1px solid transparent',
         transition: 'all var(--transition-normal)',
       }}
@@ -53,17 +68,17 @@ export const Navbar: React.FC = () => {
           justifyContent: 'space-between',
         }}
       >
-        {/* Brand Mark */}
+        {/* Brand Mark (Matched to circular badge in screenshot) */}
         <a
           href="#home"
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: '0.625rem',
-            fontWeight: 700,
-            fontSize: '1.0625rem',
+            fontWeight: 800,
+            fontSize: '1.125rem',
             color: 'var(--text-primary)',
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.02em',
           }}
           aria-label="Ashish Sharma Home"
         >
@@ -72,75 +87,98 @@ export const Navbar: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '32px',
-              height: '32px',
-              borderRadius: 'var(--radius-sm)',
-              backgroundColor: 'var(--color-accent)',
-              color: '#FFFFFF',
+              width: '36px',
+              height: '36px',
+              borderRadius: '50%',
+              backgroundColor: 'var(--text-primary)',
+              color: '#F4EFEA',
               fontWeight: 800,
               fontSize: '0.875rem',
               letterSpacing: '0.02em',
+              boxShadow: '0 2px 5px rgba(53, 35, 27, 0.2)',
             }}
           >
             AS
           </span>
-          <span>{personalInfo.name}</span>
+          <span style={{ fontWeight: 800 }}>{personalInfo.name}</span>
         </a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation Pill Bar */}
         <nav
           className="desktop-nav"
           style={{
             display: 'none',
             alignItems: 'center',
-            gap: '1.75rem',
+            gap: '0.375rem',
           }}
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              style={{
-                fontSize: '0.9375rem',
-                color: 'var(--text-secondary)',
-                fontWeight: 500,
-              }}
-              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'var(--text-primary)')}
-              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'var(--text-secondary)')}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                style={{
+                  fontSize: '0.9375rem',
+                  color: 'var(--text-primary)',
+                  fontWeight: isActive ? 700 : 500,
+                  padding: '0.4375rem 0.875rem',
+                  borderRadius: 'var(--radius-pill)',
+                  backgroundColor: isActive ? 'var(--bg-subtle)' : 'transparent',
+                  transition: 'all var(--transition-fast)',
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive) {
+                    (e.target as HTMLElement).style.backgroundColor = 'var(--bg-subtle-hover)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive) {
+                    (e.target as HTMLElement).style.backgroundColor = 'transparent';
+                  }
+                }}
+              >
+                {link.label}
+              </a>
+            );
+          })}
+        </nav>
 
+        {/* Right CTA Button (Pill shaped with subtle border, like the language/action button in screenshot) */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
           <a
             href="#contact"
-            className="btn btn-subtle btn-sm"
-            style={{ marginLeft: '0.5rem' }}
+            className="btn btn-secondary btn-sm desktop-cta"
+            style={{
+              borderRadius: 'var(--radius-pill)',
+              padding: '0.5rem 1.125rem',
+              fontWeight: 600,
+            }}
           >
             Let's Talk
             <ArrowUpRight size={14} />
           </a>
-        </nav>
 
-        {/* Mobile Hamburger Toggle */}
-        <button
-          className="mobile-toggle"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? 'Close menu' : 'Open menu'}
-          aria-expanded={isOpen}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '0.5rem',
-            borderRadius: 'var(--radius-sm)',
-            border: '1px solid var(--border-color)',
-            backgroundColor: 'var(--card-bg)',
-            color: 'var(--text-primary)',
-          }}
-        >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+          {/* Mobile Hamburger Toggle */}
+          <button
+            className="mobile-toggle"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0.5rem',
+              borderRadius: 'var(--radius-pill)',
+              border: '1.5px solid var(--border-color)',
+              backgroundColor: 'var(--card-bg)',
+              color: 'var(--text-primary)',
+            }}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -152,13 +190,13 @@ export const Navbar: React.FC = () => {
             top: 'var(--nav-height)',
             left: 0,
             right: 0,
-            backgroundColor: 'var(--card-bg)',
+            backgroundColor: 'var(--bg-main)',
             borderBottom: '1px solid var(--border-color)',
             boxShadow: 'var(--shadow-card-hover)',
             padding: '1.25rem 1.5rem',
             display: 'flex',
             flexDirection: 'column',
-            gap: '0.75rem',
+            gap: '0.5rem',
           }}
         >
           {navLinks.map((link) => (
@@ -167,11 +205,12 @@ export const Navbar: React.FC = () => {
               href={link.href}
               onClick={handleLinkClick}
               style={{
-                padding: '0.625rem 0.5rem',
+                padding: '0.625rem 1rem',
                 fontSize: '1rem',
-                fontWeight: 500,
+                fontWeight: 600,
                 color: 'var(--text-primary)',
-                borderBottom: '1px solid #F1F5F9',
+                borderRadius: 'var(--radius-pill)',
+                backgroundColor: activeSection === link.id ? 'var(--bg-subtle)' : 'transparent',
               }}
             >
               {link.label}
@@ -182,7 +221,7 @@ export const Navbar: React.FC = () => {
             href="#contact"
             onClick={handleLinkClick}
             className="btn btn-primary"
-            style={{ marginTop: '0.5rem', width: '100%' }}
+            style={{ marginTop: '0.75rem', width: '100%' }}
           >
             Let's Talk
           </a>
@@ -190,11 +229,19 @@ export const Navbar: React.FC = () => {
       )}
 
       <style>{`
-        @media (min-width: 820px) {
+        @media (min-width: 860px) {
           .desktop-nav {
             display: flex !important;
           }
           .mobile-toggle {
+            display: none !important;
+          }
+          .desktop-cta {
+            display: inline-flex !important;
+          }
+        }
+        @media (max-width: 859px) {
+          .desktop-cta {
             display: none !important;
           }
         }

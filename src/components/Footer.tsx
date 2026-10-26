@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
         <div>
           <div
             style={{
-              fontWeight: 700,
+              fontWeight: 800,
               fontSize: '1rem',
               color: 'var(--text-primary)',
             }}
@@ -69,8 +69,9 @@ export const Footer: React.FC = () => {
               alignItems: 'center',
               gap: '0.375rem',
               fontSize: '0.875rem',
+              fontWeight: 600,
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--color-accent)')}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)')}
           >
             <GithubIcon size={18} />
@@ -88,8 +89,9 @@ export const Footer: React.FC = () => {
               alignItems: 'center',
               gap: '0.375rem',
               fontSize: '0.875rem',
+              fontWeight: 600,
             }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--color-accent)')}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
             onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)')}
           >
             <LinkedinIcon size={18} />
@@ -103,20 +105,21 @@ export const Footer: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '34px',
-              height: '34px',
-              borderRadius: 'var(--radius-sm)',
-              border: '1px solid var(--border-color)',
-              backgroundColor: '#F8FAFC',
-              color: 'var(--text-secondary)',
+              width: '38px',
+              height: '38px',
+              borderRadius: '50%',
+              border: '1.5px solid var(--border-color)',
+              backgroundColor: 'var(--bg-main)',
+              color: 'var(--text-primary)',
               marginLeft: '0.5rem',
+              transition: 'all var(--transition-fast)',
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.color = 'var(--color-accent)';
-              (e.currentTarget as HTMLElement).style.borderColor = 'var(--color-accent-border)';
+              (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--bg-subtle)';
+              (e.currentTarget as HTMLElement).style.borderColor = 'var(--text-primary)';
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)';
+              (e.currentTarget as HTMLElement).style.backgroundColor = 'var(--bg-main)';
               (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-color)';
             }}
           >

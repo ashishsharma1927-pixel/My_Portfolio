@@ -14,19 +14,21 @@ export const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Projects List - cleanly scalable */}
+        {/* Projects List */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {projectsData.map((project) => (
             <div
               key={project.id}
               className="card project-card"
               style={{
-                padding: '2rem',
+                padding: '2.25rem',
                 borderRadius: 'var(--radius-lg)',
                 display: 'grid',
                 gridTemplateColumns: '1fr',
                 gap: '2.5rem',
                 alignItems: 'center',
+                backgroundColor: 'var(--bg-main)',
+                border: '1px solid var(--border-color)',
               }}
             >
               {/* Project Left: Information, Details & Actions */}
@@ -34,7 +36,7 @@ export const Projects: React.FC = () => {
                 {/* Header & Badges */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.875rem' }}>
                   {project.badge && (
-                    <span className="badge badge-accent" style={{ fontWeight: 600 }}>
+                    <span className="badge badge-accent" style={{ fontWeight: 700 }}>
                       {project.badge}
                     </span>
                   )}
@@ -43,18 +45,20 @@ export const Projects: React.FC = () => {
                       fontSize: '0.8125rem',
                       fontFamily: 'var(--font-mono)',
                       color: 'var(--text-secondary)',
+                      fontWeight: 600,
                     }}
                   >
-                    REST API Backend
+                    Django REST API
                   </span>
                 </div>
 
                 <h3
                   style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 700,
+                    fontSize: '1.625rem',
+                    fontWeight: 800,
                     color: 'var(--text-primary)',
-                    marginBottom: '0.5rem',
+                    marginBottom: '0.625rem',
+                    letterSpacing: '-0.02em',
                   }}
                 >
                   {project.title}
@@ -62,23 +66,23 @@ export const Projects: React.FC = () => {
 
                 <p
                   style={{
-                    fontSize: '1rem',
-                    lineHeight: 1.6,
+                    fontSize: '1.0625rem',
+                    lineHeight: 1.65,
                     color: 'var(--text-secondary)',
-                    marginBottom: '1.25rem',
+                    marginBottom: '1.5rem',
                   }}
                 >
                   {project.description}
                 </p>
 
-                {/* Key Contributions / Details */}
+                {/* Key Contributions */}
                 <div style={{ marginBottom: '1.5rem' }}>
                   <div
                     style={{
                       fontSize: '0.8125rem',
-                      fontWeight: 700,
+                      fontWeight: 800,
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.06em',
                       color: 'var(--text-primary)',
                       marginBottom: '0.75rem',
                     }}
@@ -90,7 +94,7 @@ export const Projects: React.FC = () => {
                       listStyle: 'none',
                       display: 'flex',
                       flexDirection: 'column',
-                      gap: '0.5rem',
+                      gap: '0.625rem',
                     }}
                   >
                     {project.details.map((detail, index) => (
@@ -100,15 +104,15 @@ export const Projects: React.FC = () => {
                           display: 'flex',
                           alignItems: 'flex-start',
                           gap: '0.625rem',
-                          fontSize: '0.875rem',
+                          fontSize: '0.9375rem',
                           lineHeight: 1.55,
                           color: 'var(--text-secondary)',
                         }}
                       >
                         <CheckCircle2
-                          size={16}
+                          size={17}
                           style={{
-                            color: 'var(--color-accent)',
+                            color: 'var(--text-primary)',
                             flexShrink: 0,
                             marginTop: '0.2rem',
                           }}
@@ -124,20 +128,20 @@ export const Projects: React.FC = () => {
                   style={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: '0.4375rem',
-                    marginBottom: '1.75rem',
+                    gap: '0.5rem',
+                    marginBottom: '2rem',
                   }}
                 >
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
                       style={{
-                        padding: '0.25rem 0.5rem',
-                        fontSize: '0.75rem',
-                        fontWeight: 500,
-                        backgroundColor: '#F8FAFC',
+                        padding: '0.3125rem 0.6875rem',
+                        fontSize: '0.8125rem',
+                        fontWeight: 600,
+                        backgroundColor: '#FFFFFF',
                         border: '1px solid var(--border-color)',
-                        borderRadius: 'var(--radius-sm)',
+                        borderRadius: 'var(--radius-pill)',
                         color: 'var(--text-primary)',
                       }}
                     >
@@ -199,18 +203,18 @@ export const Projects: React.FC = () => {
               <div>
                 <div
                   style={{
-                    backgroundColor: 'var(--bg-main)',
+                    backgroundColor: '#FFFFFF',
                     border: '1px solid var(--border-color)',
                     borderRadius: 'var(--radius-md)',
                     overflow: 'hidden',
-                    boxShadow: 'var(--shadow-subtle)',
+                    boxShadow: 'var(--shadow-card-hover)',
                   }}
                 >
                   {/* Dashboard Top Header */}
                   <div
                     style={{
-                      padding: '0.75rem 1rem',
-                      backgroundColor: '#F1F5F9',
+                      padding: '0.875rem 1.125rem',
+                      backgroundColor: 'var(--bg-subtle)',
                       borderBottom: '1px solid var(--border-color)',
                       display: 'flex',
                       alignItems: 'center',
@@ -218,20 +222,20 @@ export const Projects: React.FC = () => {
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <Building size={16} style={{ color: 'var(--color-accent)' }} />
-                      <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--text-primary)' }}>
+                      <Building size={16} style={{ color: 'var(--text-primary)' }} />
+                      <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                         HRMS Employee Portal
                       </span>
                     </div>
                     <span
                       style={{
                         fontSize: '0.6875rem',
-                        fontWeight: 600,
-                        color: '#059669',
-                        backgroundColor: '#ECFDF5',
-                        padding: '0.125rem 0.5rem',
-                        borderRadius: 'var(--radius-sm)',
-                        border: '1px solid #A7F3D0',
+                        fontWeight: 700,
+                        color: '#2D6A4F',
+                        backgroundColor: '#E8F5E9',
+                        padding: '0.2rem 0.6rem',
+                        borderRadius: 'var(--radius-pill)',
+                        border: '1px solid #C8E6C9',
                       }}
                     >
                       DRF API • Online
@@ -251,38 +255,38 @@ export const Projects: React.FC = () => {
                     >
                       <div
                         style={{
-                          backgroundColor: '#FFFFFF',
-                          padding: '0.75rem',
+                          backgroundColor: 'var(--bg-main)',
+                          padding: '0.875rem',
                           borderRadius: 'var(--radius-sm)',
                           border: '1px solid var(--border-color)',
                         }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginBottom: '0.25rem' }}>
-                          <Users size={14} style={{ color: 'var(--color-accent)' }} />
-                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                          <Users size={14} style={{ color: 'var(--text-primary)' }} />
+                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
                             Total Staff
                           </span>
                         </div>
-                        <div style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                           128 Records
                         </div>
                       </div>
 
                       <div
                         style={{
-                          backgroundColor: '#FFFFFF',
-                          padding: '0.75rem',
+                          backgroundColor: 'var(--bg-main)',
+                          padding: '0.875rem',
                           borderRadius: 'var(--radius-sm)',
                           border: '1px solid var(--border-color)',
                         }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', marginBottom: '0.25rem' }}>
-                          <ShieldCheck size={14} style={{ color: '#059669' }} />
-                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', fontWeight: 500 }}>
+                          <ShieldCheck size={14} style={{ color: '#2D6A4F' }} />
+                          <span style={{ fontSize: '0.6875rem', color: 'var(--text-secondary)', fontWeight: 600 }}>
                             Endpoints
                           </span>
                         </div>
-                        <div style={{ fontSize: '1.125rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        <div style={{ fontSize: '1.25rem', fontWeight: 800, color: 'var(--text-primary)' }}>
                           100% Tested
                         </div>
                       </div>
@@ -295,18 +299,18 @@ export const Projects: React.FC = () => {
                         border: '1px solid var(--border-color)',
                         borderRadius: 'var(--radius-sm)',
                         overflow: 'hidden',
-                        fontSize: '0.75rem',
+                        fontSize: '0.78125rem',
                       }}
                     >
                       <div
                         style={{
                           display: 'grid',
                           gridTemplateColumns: '1.2fr 1.2fr 0.8fr',
-                          padding: '0.5rem 0.75rem',
-                          backgroundColor: '#F8FAFC',
+                          padding: '0.625rem 0.75rem',
+                          backgroundColor: 'var(--bg-subtle)',
                           borderBottom: '1px solid var(--border-color)',
-                          fontWeight: 600,
-                          color: 'var(--text-secondary)',
+                          fontWeight: 700,
+                          color: 'var(--text-primary)',
                         }}
                       >
                         <span>Employee</span>
@@ -325,7 +329,7 @@ export const Projects: React.FC = () => {
                       >
                         <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Priya Sen</span>
                         <span style={{ color: 'var(--text-secondary)' }}>Engineering</span>
-                        <span style={{ textAlign: 'right', color: '#059669', fontWeight: 600 }}>Active</span>
+                        <span style={{ textAlign: 'right', color: '#2D6A4F', fontWeight: 700 }}>Active</span>
                       </div>
 
                       <div
@@ -339,7 +343,7 @@ export const Projects: React.FC = () => {
                       >
                         <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Rahul Verma</span>
                         <span style={{ color: 'var(--text-secondary)' }}>Operations</span>
-                        <span style={{ textAlign: 'right', color: '#059669', fontWeight: 600 }}>Active</span>
+                        <span style={{ textAlign: 'right', color: '#2D6A4F', fontWeight: 700 }}>Active</span>
                       </div>
 
                       <div
@@ -352,7 +356,7 @@ export const Projects: React.FC = () => {
                       >
                         <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Aman Gill</span>
                         <span style={{ color: 'var(--text-secondary)' }}>HR &amp; Admin</span>
-                        <span style={{ textAlign: 'right', color: '#059669', fontWeight: 600 }}>Active</span>
+                        <span style={{ textAlign: 'right', color: '#2D6A4F', fontWeight: 700 }}>Active</span>
                       </div>
                     </div>
 
@@ -360,7 +364,7 @@ export const Projects: React.FC = () => {
                     <div
                       style={{
                         marginTop: '0.875rem',
-                        fontSize: '0.6875rem',
+                        fontSize: '0.75rem',
                         color: 'var(--text-secondary)',
                         textAlign: 'center',
                         fontStyle: 'italic',
