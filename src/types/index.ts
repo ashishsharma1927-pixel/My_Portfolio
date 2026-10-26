@@ -1,0 +1,38 @@
+export interface Project {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  technologies: string[];
+  details: string[];
+  liveUrl?: string;
+  backendUrl?: string;
+  githubUrl?: string;
+  badge?: string;
+}
+
+export interface SkillCategory {
+  title: string;
+  skills: {
+    name: string;
+    icon?: string;
+  }[];
+}
+
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  duration: string;
+  type: string;
+  location?: string;
+  responsibilities: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  degree: string;
+  institution: string;
+  durationOrYear: string;
+  scoreOrDetail?: string;
+}
