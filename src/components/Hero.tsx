@@ -211,12 +211,12 @@ export const Hero: React.FC = () => {
                 maxWidth: '380px',
               }}
             >
-              {/* Square Portrait Container */}
+              {/* Square/Portrait Frame perfectly calibrated for Ashish & Puppy */}
               <div
                 style={{
                   width: '100%',
-                  aspectRatio: '1 / 1',
-                  borderRadius: '20px',
+                  aspectRatio: '0.82',
+                  borderRadius: '22px',
                   backgroundColor: '#FFFFFF',
                   border: '8px solid #FFFFFF',
                   boxShadow: '0 20px 40px -10px rgba(53, 35, 27, 0.14), 0 6px 16px rgba(53, 35, 27, 0.05)',
@@ -236,8 +236,8 @@ export const Hero: React.FC = () => {
                       width: '100%',
                       height: '100%',
                       objectFit: 'cover',
-                      objectPosition: 'center 22%',
-                      borderRadius: '12px',
+                      objectPosition: 'center 65%',
+                      borderRadius: '14px',
                       display: 'block',
                     }}
                   />
@@ -260,12 +260,12 @@ export const Hero: React.FC = () => {
                 )}
               </div>
 
-              {/* Signature Floating Badge at Bottom Corner */}
+              {/* Signature Floating Badge placed at Bottom Right so the puppy on the left is never covered */}
               <div
                 style={{
                   position: 'absolute',
                   bottom: '-12px',
-                  left: '-12px',
+                  right: '-12px',
                   backgroundColor: '#FFFFFF',
                   padding: '0.5rem 1.125rem',
                   borderRadius: '14px',
@@ -287,7 +287,7 @@ export const Hero: React.FC = () => {
                     lineHeight: 1,
                   }}
                 >
-                  APIs with purpose ✨
+                  Turning ideas into reality ✨
                 </span>
               </div>
             </div>
