@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
     <section
       id="home"
       style={{
-        paddingTop: 'calc(var(--nav-height) + 2.5rem)',
+        paddingTop: 'calc(var(--nav-height) + 2rem)',
         paddingBottom: '5rem',
         minHeight: 'calc(100vh - var(--nav-height))',
         display: 'flex',
@@ -23,12 +23,12 @@ export const Hero: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: '3.5rem',
+            gap: '3rem',
             alignItems: 'center',
           }}
         >
           {/* Left Column: Typography & CTAs */}
-          <div style={{ maxWidth: '580px' }}>
+          <div className="hero-text-col" style={{ width: '100%', maxWidth: '720px' }}>
             {/* Tag Pill with Sparkle */}
             <div
               style={{
@@ -42,22 +42,22 @@ export const Hero: React.FC = () => {
                 fontSize: '0.875rem',
                 fontWeight: 600,
                 color: 'var(--text-primary)',
-                marginBottom: '1.5rem',
+                marginBottom: '1.25rem',
               }}
             >
               <Sparkles size={15} style={{ color: 'var(--text-primary)' }} />
               <span>{personalInfo.title}</span>
             </div>
 
-            {/* Headline */}
+            {/* Fluid Responsive Headline */}
             <h1
               className="hero-greeting"
               style={{
-                fontSize: '3.5rem',
+                fontSize: 'clamp(2.5rem, 5.5vw, 4.25rem)',
                 lineHeight: 1.08,
                 fontWeight: 800,
                 color: 'var(--text-primary)',
-                marginBottom: '1.5rem',
+                marginBottom: '1.25rem',
                 letterSpacing: '-0.03em',
               }}
             >
@@ -68,11 +68,11 @@ export const Hero: React.FC = () => {
             {/* Description Paragraph */}
             <p
               style={{
-                fontSize: '1.125rem',
-                lineHeight: 1.7,
+                fontSize: 'clamp(1rem, 1.8vw, 1.1875rem)',
+                lineHeight: 1.75,
                 color: 'var(--text-secondary)',
                 marginBottom: '2rem',
-                maxWidth: '520px',
+                maxWidth: '620px',
               }}
             >
               Creative and detail-oriented Python Backend Developer creating robust REST APIs,
@@ -81,12 +81,13 @@ export const Hero: React.FC = () => {
 
             {/* Pill Action Buttons */}
             <div
+              className="hero-actions"
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '1rem',
+                gap: '0.875rem',
                 alignItems: 'center',
-                marginBottom: '2rem',
+                marginBottom: '2.25rem',
               }}
             >
               <a href="#projects" className="btn btn-primary" style={{ padding: '0.8125rem 1.625rem' }}>
@@ -118,7 +119,7 @@ export const Hero: React.FC = () => {
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 gap: '1.25rem',
-                paddingTop: '0.5rem',
+                paddingTop: '0.25rem',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -168,6 +169,7 @@ export const Hero: React.FC = () => {
               <div
                 style={{
                   display: 'flex',
+                  flexWrap: 'wrap',
                   gap: '0.5rem',
                   alignItems: 'center',
                 }}
@@ -193,17 +195,20 @@ export const Hero: React.FC = () => {
 
           {/* Right Column: Clean, Elegant Square Frame */}
           <div
+            className="hero-image-col"
             style={{
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
+              width: '100%',
             }}
           >
             <div
+              className="hero-square-wrapper"
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '340px',
+                maxWidth: '380px',
               }}
             >
               {/* Square Portrait Container */}
@@ -211,10 +216,10 @@ export const Hero: React.FC = () => {
                 style={{
                   width: '100%',
                   aspectRatio: '1 / 1',
-                  borderRadius: '18px',
+                  borderRadius: '20px',
                   backgroundColor: '#FFFFFF',
                   border: '8px solid #FFFFFF',
-                  boxShadow: '0 16px 36px -8px rgba(53, 35, 27, 0.14), 0 4px 12px rgba(53, 35, 27, 0.06)',
+                  boxShadow: '0 20px 40px -10px rgba(53, 35, 27, 0.14), 0 6px 16px rgba(53, 35, 27, 0.05)',
                   overflow: 'hidden',
                   position: 'relative',
                   display: 'flex',
@@ -232,7 +237,7 @@ export const Hero: React.FC = () => {
                       height: '100%',
                       objectFit: 'cover',
                       objectPosition: 'center 22%',
-                      borderRadius: '10px',
+                      borderRadius: '12px',
                       display: 'block',
                     }}
                   />
@@ -259,8 +264,8 @@ export const Hero: React.FC = () => {
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '-14px',
-                  left: '-14px',
+                  bottom: '-12px',
+                  left: '-12px',
                   backgroundColor: '#FFFFFF',
                   padding: '0.5rem 1.125rem',
                   borderRadius: '14px',
@@ -291,14 +296,23 @@ export const Hero: React.FC = () => {
       </div>
 
       <style>{`
-        @media (min-width: 890px) {
+        @media (min-width: 960px) {
           .hero-grid {
-            grid-template-columns: 1.15fr 0.85fr !important;
+            grid-template-columns: 1.25fr 0.85fr !important;
+            gap: 4rem !important;
           }
         }
         @media (max-width: 640px) {
-          .hero-greeting {
-            font-size: 2.75rem !important;
+          .hero-square-wrapper {
+            max-width: 280px !important;
+            margin: 0 auto !important;
+          }
+          .hero-actions {
+            flex-direction: column !important;
+            align-items: stretch !important;
+          }
+          .hero-actions .btn {
+            width: 100% !important;
           }
         }
       `}</style>

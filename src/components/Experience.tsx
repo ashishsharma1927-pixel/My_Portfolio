@@ -14,15 +14,15 @@ export const Experience: React.FC = () => {
           </p>
         </div>
 
-        {/* Minimal Experience Cards */}
-        <div style={{ maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        {/* Spacious Experience Card */}
+        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {experienceData.map((exp) => (
             <div
               key={exp.id}
               className="card"
               style={{
-                padding: '2rem',
-                borderLeft: '4px solid var(--text-primary)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.75rem)',
+                borderLeft: '5px solid var(--text-primary)',
                 borderRadius: 'var(--radius-md)',
               }}
             >

@@ -15,12 +15,12 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="section">
       <div className="container">
-        <div style={{ maxWidth: '780px', margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ width: '100%', maxWidth: '960px', margin: '0 auto', textAlign: 'center' }}>
           {/* Header */}
-          <div className="section-header" style={{ marginBottom: '2rem' }}>
+          <div className="section-header" style={{ marginBottom: '2.5rem' }}>
             <span className="section-label">Get In Touch</span>
             <h2 className="section-heading">Let's Build Something Together</h2>
-            <p className="section-subtitle" style={{ margin: '0.75rem auto 0', maxWidth: '580px' }}>
+            <p className="section-subtitle" style={{ margin: '0.75rem auto 0', maxWidth: '640px' }}>
               Have a backend project, a development opportunity, or an idea to discuss? Feel free to get in touch.
             </p>
           </div>
@@ -29,14 +29,14 @@ export const Contact: React.FC = () => {
           <div
             className="card"
             style={{
-              padding: '2.5rem 2rem',
+              padding: 'clamp(2rem, 4.5vw, 3.5rem) 1.5rem',
               backgroundColor: '#FFFFFF',
               boxShadow: 'var(--shadow-card-hover)',
               borderRadius: 'var(--radius-lg)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              gap: '1.75rem',
+              gap: '2rem',
             }}
           >
             {/* Email Actions */}

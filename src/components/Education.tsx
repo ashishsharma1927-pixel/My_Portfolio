@@ -14,13 +14,13 @@ export const Education: React.FC = () => {
           </p>
         </div>
 
-        {/* Compact Grid */}
+        {/* Spacious, Responsive Grid */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.25rem',
-            maxWidth: '920px',
+            gap: '1.5rem',
+            width: '100%',
           }}
         >
           {educationData.map((edu) => (

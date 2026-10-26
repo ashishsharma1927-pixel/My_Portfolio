@@ -5,21 +5,21 @@ import { personalInfo } from '../data/portfolioData';
 export const About: React.FC = () => {
   const infoCards = [
     {
-      icon: <MapPin size={20} style={{ color: 'var(--text-primary)' }} />,
+      icon: <MapPin size={22} style={{ color: 'var(--text-primary)' }} />,
       label: 'Location',
       value: personalInfo.location,
     },
     {
-      icon: <GraduationCap size={20} style={{ color: 'var(--text-primary)' }} />,
+      icon: <GraduationCap size={22} style={{ color: 'var(--text-primary)' }} />,
       label: 'Education',
       value: 'B.Sc. Mathematics',
-      subtext: 'Himachal Pradesh University',
+      subtext: 'Himachal Pradesh University (HPU)',
     },
     {
-      icon: <Cpu size={20} style={{ color: 'var(--text-primary)' }} />,
+      icon: <Cpu size={22} style={{ color: 'var(--text-primary)' }} />,
       label: 'Focus',
       value: 'Backend Development',
-      subtext: 'APIs & Relational Databases',
+      subtext: 'REST APIs & Relational Database Schemas',
     },
   ];
 
@@ -32,34 +32,54 @@ export const About: React.FC = () => {
         </div>
 
         <div
+          className="about-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: '1fr',
-            gap: '2.5rem',
-            alignItems: 'start',
+            gap: '3rem',
+            alignItems: 'center',
           }}
-          className="about-grid"
         >
           {/* Paragraph */}
           <div>
             <p
               style={{
-                fontSize: '1.125rem',
-                lineHeight: 1.8,
+                fontSize: 'clamp(1.0625rem, 1.8vw, 1.25rem)',
+                lineHeight: 1.85,
                 color: 'var(--text-secondary)',
-                maxWidth: '680px',
+                marginBottom: '1.5rem',
               }}
             >
               {personalInfo.aboutText}
             </p>
+
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.75rem',
+                marginTop: '1.5rem',
+              }}
+            >
+              <span className="badge" style={{ padding: '0.375rem 0.875rem' }}>
+                🚀 RESTful Architecture
+              </span>
+              <span className="badge" style={{ padding: '0.375rem 0.875rem' }}>
+                🛡️ Query Optimization &amp; Debugging
+              </span>
+              <span className="badge" style={{ padding: '0.375rem 0.875rem' }}>
+                ⚡ End-to-End API Testing
+              </span>
+            </div>
           </div>
 
           {/* 3 Information Pills / Compact Cards */}
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+              display: 'flex',
+              flexDirection: 'column',
               gap: '1rem',
+              width: '100%',
             }}
           >
             {infoCards.map((item) => (
@@ -69,16 +89,17 @@ export const About: React.FC = () => {
                   backgroundColor: 'var(--bg-main)',
                   border: '1px solid var(--border-color)',
                   borderRadius: 'var(--radius-md)',
-                  padding: '1.25rem',
+                  padding: '1.375rem 1.5rem',
                   display: 'flex',
                   alignItems: 'flex-start',
-                  gap: '0.875rem',
+                  gap: '1rem',
                   boxShadow: 'var(--shadow-subtle)',
+                  transition: 'transform var(--transition-fast)',
                 }}
               >
                 <div
                   style={{
-                    padding: '0.5rem',
+                    padding: '0.625rem',
                     backgroundColor: 'var(--bg-subtle)',
                     borderRadius: 'var(--radius-sm)',
                     border: '1px solid var(--border-color)',
@@ -93,10 +114,10 @@ export const About: React.FC = () => {
                 <div>
                   <div
                     style={{
-                      fontSize: '0.75rem',
+                      fontSize: '0.78125rem',
                       fontWeight: 700,
                       textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
+                      letterSpacing: '0.06em',
                       color: 'var(--text-secondary)',
                       marginBottom: '0.25rem',
                     }}
@@ -105,7 +126,7 @@ export const About: React.FC = () => {
                   </div>
                   <div
                     style={{
-                      fontSize: '0.9375rem',
+                      fontSize: '1.0625rem',
                       fontWeight: 700,
                       color: 'var(--text-primary)',
                       lineHeight: 1.3,
@@ -116,9 +137,9 @@ export const About: React.FC = () => {
                   {item.subtext && (
                     <div
                       style={{
-                        fontSize: '0.8125rem',
+                        fontSize: '0.875rem',
                         color: 'var(--text-secondary)',
-                        marginTop: '0.125rem',
+                        marginTop: '0.2rem',
                       }}
                     >
                       {item.subtext}
@@ -130,6 +151,15 @@ export const About: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (min-width: 900px) {
+          .about-grid {
+            grid-template-columns: 1.15fr 0.85fr !important;
+            gap: 4rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

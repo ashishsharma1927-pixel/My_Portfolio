@@ -31,12 +31,12 @@ export const Skills: React.FC = () => {
           </p>
         </div>
 
-        {/* Clean, Compact Categories Grid */}
+        {/* Spacious, Responsive Categories Grid */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '1.25rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '1.5rem',
           }}
         >
           {skillsData.map((category) => (

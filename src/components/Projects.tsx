@@ -21,11 +21,11 @@ export const Projects: React.FC = () => {
               key={project.id}
               className="card project-card"
               style={{
-                padding: '2.25rem',
+                padding: 'clamp(1.5rem, 3.5vw, 3rem)',
                 borderRadius: 'var(--radius-lg)',
                 display: 'grid',
                 gridTemplateColumns: '1fr',
-                gap: '2.5rem',
+                gap: 'clamp(1.75rem, 3vw, 3.5rem)',
                 alignItems: 'center',
                 backgroundColor: 'var(--bg-main)',
                 border: '1px solid var(--border-color)',
@@ -381,9 +381,10 @@ export const Projects: React.FC = () => {
       </div>
 
       <style>{`
-        @media (min-width: 860px) {
+        @media (min-width: 940px) {
           .project-card {
-            grid-template-columns: 1.15fr 0.85fr !important;
+            grid-template-columns: 1.2fr 0.9fr !important;
+            gap: 3.5rem !important;
           }
         }
       `}</style>
