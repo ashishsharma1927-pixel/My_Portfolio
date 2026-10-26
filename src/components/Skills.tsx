@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Database, Zap, Wrench, Cloud } from 'lucide-react';
+import { Server, Database, Zap, Wrench, Cloud, Layers } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
 export const Skills: React.FC = () => {
@@ -7,6 +7,8 @@ export const Skills: React.FC = () => {
     switch (title) {
       case 'Backend':
         return <Server size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'Frontend & 3D Interactive':
+        return <Layers size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Databases':
         return <Database size={18} style={{ color: 'var(--text-primary)' }} />;
       case 'Background Tasks & Caching':
@@ -27,7 +29,7 @@ export const Skills: React.FC = () => {
           <span className="section-label">Toolkit</span>
           <h2 className="section-heading">Technologies I Work With</h2>
           <p className="section-subtitle">
-            A focused backend stack for developing RESTful APIs, relational schema architectures, and server applications.
+            A comprehensive technical toolkit spanning robust backend APIs, relational database architectures, and interactive 3D WebGL experiences.
           </p>
         </div>
 

@@ -14,11 +14,11 @@ export const personalInfo = {
   github: 'https://github.com/ashishsharma1927-pixel',
   linkedin: 'https://linkedin.com/in/ashish-sharma-742268416',
   resumeUrl: '/Ashish_Sharma_Resume.pdf',
-  heroTechLabels: ['Python', 'Django REST Framework', 'REST APIs'],
+  heroTechLabels: ['Python & Django', 'REST APIs', 'React 19 & Three.js'],
   aboutHighlights: [
     { label: 'Location', value: 'Bilaspur, Himachal Pradesh, India' },
     { label: 'Education', value: 'B.Sc. Mathematics' },
-    { label: 'Focus', value: 'Backend Development' },
+    { label: 'Focus', value: 'Backend & Full-Stack Development' },
   ],
 };
 
@@ -30,6 +30,15 @@ export const skillsData: SkillCategory[] = [
       { name: 'Django' },
       { name: 'Django REST Framework' },
       { name: 'REST APIs' },
+    ],
+  },
+  {
+    title: 'Frontend & 3D Interactive',
+    skills: [
+      { name: 'React 19' },
+      { name: 'TypeScript' },
+      { name: 'Three.js / WebGL' },
+      { name: 'Tailwind CSS' },
     ],
   },
   {
@@ -59,29 +68,30 @@ export const skillsData: SkillCategory[] = [
   {
     title: 'Deployment & IDE',
     skills: [
-      { name: 'Render' },
       { name: 'Vercel' },
+      { name: 'Render' },
       { name: 'Antigravity IDE' },
     ],
   },
 ];
 
 /* 
-  Easily add new projects here in the future! 
-  Just add a new object to this array with your project details.
+  Projects Showcase
 */
 export const projectsData: Project[] = [
   {
     id: 'hrms',
     title: 'HRMS — Human Resource Management System',
     tagline: 'Employee & Department Management Application',
+    category: 'Backend Architecture • Django REST API',
     description:
-      'A human resource management application focused on employee and department management, backed by Django REST Framework APIs.',
+      'A human resource management application focused on employee and department management, powered by scalable Django REST Framework APIs.',
     technologies: [
       'Python',
       'Django',
       'Django REST Framework',
-      'PostgreSQL/MySQL',
+      'PostgreSQL',
+      'MySQL',
       'Postman',
       'Render',
       'Vercel',
@@ -96,6 +106,36 @@ export const projectsData: Project[] = [
     liveUrl: 'https://hrms-frontend-cr1h.vercel.app/login',
     backendUrl: 'https://hrms-backend-yj0q.onrender.com',
     badge: 'Featured Project',
+  },
+  {
+    id: 'segs',
+    title: 'SEGS — Spatial 3D E-Commerce Platform',
+    tagline: 'Spatial 3D E-Commerce Platform & Precision Hardware Architecture',
+    category: '3D Spatial Commerce • React 19 & WebGL',
+    description:
+      'A next-generation spatial digital commerce platform engineered with React 19, Three.js / React Three Fiber, and Tailwind CSS. Bridging the gap between tactile physical hardware and digital spatial retail, SEGS features a real-time WebGL audio studio, dynamic material shaders, acoustic telemetry HUDs, and an end-to-end multi-step checkout funnel.',
+    technologies: [
+      'React 19',
+      'Three.js',
+      'React Three Fiber',
+      'TypeScript',
+      'Tailwind CSS',
+      'Framer Motion',
+      'GSAP',
+      'Vite',
+      'Vercel',
+    ],
+    details: [
+      'Interactive 3D Spatial Audio Studio (/experience) with 360° real-time WebGL orbit, dynamic exploded focal hotspots, and live acoustic telemetry HUD.',
+      'Real-time material shader customizer supporting Aerospace Titanium, Matte Obsidian, Space Silver, and Imperial Bronze finishes.',
+      'Full e-commerce funnel with faceted product filtering, dynamic cart & saved wishlist sync with persistent localStorage state, and promo code engine.',
+      'Multi-step checkout flow (Shipping address, priority dispatch, encrypted payment card/Apple Pay, and order manifest generation).',
+      'Real-time 5-step order courier telemetry tracking (/tracking) with GPS transit waypoints, printable invoice, and customs duty verification.',
+      'Enterprise resilience featuring global React ErrorBoundary, automated GPU WebGL fallback detection, and zero 3rd-party cookie tracking.',
+    ],
+    liveUrl: 'https://segs-one.vercel.app/',
+    githubUrl: 'https://github.com/ashishsharma1927-pixel/segs',
+    badge: 'Spatial 3D Commerce',
   },
 ];
 
