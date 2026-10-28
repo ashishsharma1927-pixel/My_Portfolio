@@ -10,6 +10,11 @@ export interface Project {
   backendUrl?: string;
   githubUrl?: string;
   badge?: string;
+  image?: string;
+  demoCredentials?: {
+    email: string;
+    password?: string;
+  };
 }
 
 export interface SkillCategory {

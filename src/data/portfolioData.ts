@@ -7,14 +7,14 @@ export const personalInfo = {
   shortIntro:
     "I'm a Python Backend Developer with hands-on experience building REST APIs, working with databases, testing endpoints, and debugging backend applications.",
   aboutText:
-    'I specialize in Python, Django, and Django REST Framework, focusing on building resilient REST APIs and efficient relational database schemas. Holding a B.Sc. in Mathematics from Himachal Pradesh University, I combine analytical thinking with systematic backend engineering to develop scalable endpoints, optimize data queries, and resolve complex application bugs.',
+    'I specialize in Python, Django, and Django REST Framework, focusing on building resilient REST APIs, real-time WebSocket telemetry with Django Channels, and full-stack SaaS platforms. Holding a B.Sc. in Mathematics from Himachal Pradesh University, I combine analytical thinking with systematic backend engineering to develop scalable endpoints, optimize data queries, and resolve complex application bugs.',
   location: 'Bilaspur, Himachal Pradesh, India',
   email: 'ashishsharma1927@gmail.com',
   phone: '+91 90152 10471',
   github: 'https://github.com/ashishsharma1927-pixel',
   linkedin: 'https://linkedin.com/in/ashish-sharma-742268416',
   resumeUrl: '/Ashish_Sharma_Resume.pdf',
-  heroTechLabels: ['Python & Django', 'REST APIs', 'React 19 & Three.js'],
+  heroTechLabels: ['Python 3 & Django 6', 'WebSockets & Channels', 'Stripe & Cloud SaaS'],
   aboutHighlights: [
     { label: 'Location', value: 'Bilaspur, Himachal Pradesh, India' },
     { label: 'Education', value: 'B.Sc. Mathematics' },
@@ -24,53 +24,63 @@ export const personalInfo = {
 
 export const skillsData: SkillCategory[] = [
   {
-    title: 'Backend',
+    title: 'Backend Architecture',
     skills: [
-      { name: 'Python' },
-      { name: 'Django' },
+      { name: 'Python 3' },
+      { name: 'Django 6.0' },
       { name: 'Django REST Framework' },
-      { name: 'REST APIs' },
+      { name: 'Django Channels (WebSockets)' },
+      { name: 'ASGI (Daphne)' },
+      { name: 'WSGI (Gunicorn)' },
     ],
   },
   {
-    title: 'Frontend & 3D Interactive',
+    title: 'Frontend & UI Engineering',
     skills: [
-      { name: 'React 19' },
-      { name: 'TypeScript' },
-      { name: 'Three.js / WebGL' },
-      { name: 'Tailwind CSS' },
+      { name: 'Vanilla JavaScript (ES6+)' },
+      { name: 'HTML5 Semantic' },
+      { name: 'Custom Vanilla CSS3' },
+      { name: 'Glassmorphism & Micro-interactions' },
+      { name: 'Responsive Layouts' },
     ],
   },
   {
-    title: 'Databases',
+    title: 'Databases & Storage',
     skills: [
+      { name: 'PostgreSQL (Cloud)' },
+      { name: 'SQLite3 (dj-database-url)' },
       { name: 'MySQL' },
-      { name: 'PostgreSQL' },
-      { name: 'MongoDB' },
+      { name: 'Relational Schema Design' },
     ],
   },
   {
-    title: 'Background Tasks & Caching',
+    title: 'Async, WebSockets & Caching',
     skills: [
-      { name: 'Redis' },
-      { name: 'Celery' },
+      { name: 'Django Channels' },
+      { name: 'WebSocket Telemetry' },
+      { name: 'In-Memory Django Cache' },
+      { name: 'Non-blocking Daemon Threads' },
     ],
   },
   {
-    title: 'Testing & Development Tools',
+    title: 'APIs, Payments & Security',
     skills: [
-      { name: 'Postman' },
-      { name: 'Git' },
-      { name: 'GitHub' },
-      { name: 'Docker' },
+      { name: 'Stripe Checkout & Webhooks' },
+      { name: 'Resend HTTPS REST Email API' },
+      { name: '6-digit Email OTP Verification' },
+      { name: 'Brute-Force Rate Limiting' },
+      { name: 'Dynamic CSRF Protection' },
     ],
   },
   {
-    title: 'Deployment & IDE',
+    title: 'Cloud DevOps & Deployment',
     skills: [
-      { name: 'Vercel' },
-      { name: 'Render' },
-      { name: 'Antigravity IDE' },
+      { name: 'Render Cloud PaaS' },
+      { name: 'Vercel Edge' },
+      { name: 'WhiteNoise Asset Compression' },
+      { name: 'Auto-Migrate & Auto-Seed' },
+      { name: 'Postman API Testing' },
+      { name: 'Git & GitHub' },
     ],
   },
 ];
@@ -79,6 +89,44 @@ export const skillsData: SkillCategory[] = [
   Projects Showcase
 */
 export const projectsData: Project[] = [
+  {
+    id: 'omnipilot',
+    title: 'OmniPilot Studio OS',
+    tagline: 'All-in-One AI Content Generation & SaaS Growth Operating System',
+    category: 'Full-Stack AI SaaS • Python 3 & Django 6.0 Channels',
+    description:
+      'A full-stack SaaS operating system that unifies AI-powered multi-channel content generation, live pipeline tracking, real-time revenue analytics via WebSockets, and seamless Stripe payments into an uncluttered, modern dashboard command center.',
+    technologies: [
+      'Python 3',
+      'Django 6.0',
+      'Django Channels (WebSockets)',
+      'ASGI (Daphne)',
+      'WSGI (Gunicorn)',
+      'Cloud PostgreSQL',
+      'Stripe Payments & Webhooks',
+      'Resend HTTPS REST API',
+      'Vanilla JavaScript (ES6+)',
+      'Render Cloud PaaS',
+      'WhiteNoise',
+    ],
+    details: [
+      'AI Content Studio & Multi-Format Generator: Generates viral LinkedIn carousel slides, Twitter/X threads, and conversion-focused copy with real-time token counters, reading-time estimators, and tone analyzers.',
+      'Live WebSocket Telemetry Dashboard: Real-time metrics streaming dynamic Monthly Recurring Revenue (MRR), total invoiced sums, and active lead volume without page refreshes.',
+      'Client Pipeline & Invoicing CRM: Full CRUD management for inbound client leads, deal stages, and professional invoice generation with instant Stripe checkout.',
+      'Multi-Tier Stripe Subscription Billing: Multi-tiered monetization with automated credit allocation upon checkout completion and dynamic webhook handlers.',
+      'Cloud Network Firewall Resilience: Engineered a dual-path dispatch engine bypassing cloud hosting raw SMTP port restrictions (587/465) via Port 443 HTTPS REST APIs (Resend) with graceful fallback.',
+      'Sub-Second Asynchronous Dispatching: Decoupled transactional email I/O into native non-blocking daemon background threads, reducing sign-up latency by 98% (from 70+ seconds down to 0.96s).',
+      'Zero-Downtime Deployment Orchestration: Custom WSGI/ASGI entrypoints (app.py & gunicorn.conf.py) that automatically detect dynamic host ports, run schema migrations, collect compressed static assets via WhiteNoise, and auto-seed the demo workspace on startup.',
+    ],
+    liveUrl: 'https://omnipilot-nmko.onrender.com/',
+    githubUrl: 'https://github.com/ashishsharma1927-pixel/OmniPilot',
+    badge: 'Flagship AI SaaS',
+    image: '/Omnipilot.png',
+    demoCredentials: {
+      email: 'test@yopmail.com',
+      password: 'Test@123',
+    },
+  },
   {
     id: 'hrms',
     title: 'HRMS — Human Resource Management System',
@@ -106,36 +154,7 @@ export const projectsData: Project[] = [
     liveUrl: 'https://hrms-frontend-cr1h.vercel.app/login',
     backendUrl: 'https://hrms-backend-yj0q.onrender.com',
     badge: 'Featured Project',
-  },
-  {
-    id: 'segs',
-    title: 'SEGS — Spatial 3D E-Commerce Platform',
-    tagline: 'Spatial 3D E-Commerce Platform & Precision Hardware Architecture',
-    category: '3D Spatial Commerce • React 19 & WebGL',
-    description:
-      'A next-generation spatial digital commerce platform engineered with React 19, Three.js / React Three Fiber, and Tailwind CSS. Bridging the gap between tactile physical hardware and digital spatial retail, SEGS features a real-time WebGL audio studio, dynamic material shaders, acoustic telemetry HUDs, and an end-to-end multi-step checkout funnel.',
-    technologies: [
-      'React 19',
-      'Three.js',
-      'React Three Fiber',
-      'TypeScript',
-      'Tailwind CSS',
-      'Framer Motion',
-      'GSAP',
-      'Vite',
-      'Vercel',
-    ],
-    details: [
-      'Interactive 3D Spatial Audio Studio (/experience) with 360° real-time WebGL orbit, dynamic exploded focal hotspots, and live acoustic telemetry HUD.',
-      'Real-time material shader customizer supporting Aerospace Titanium, Matte Obsidian, Space Silver, and Imperial Bronze finishes.',
-      'Full e-commerce funnel with faceted product filtering, dynamic cart & saved wishlist sync with persistent localStorage state, and promo code engine.',
-      'Multi-step checkout flow (Shipping address, priority dispatch, encrypted payment card/Apple Pay, and order manifest generation).',
-      'Real-time 5-step order courier telemetry tracking (/tracking) with GPS transit waypoints, printable invoice, and customs duty verification.',
-      'Enterprise resilience featuring global React ErrorBoundary, automated GPU WebGL fallback detection, and zero 3rd-party cookie tracking.',
-    ],
-    liveUrl: 'https://segs-one.vercel.app/',
-    githubUrl: 'https://github.com/ashishsharma1927-pixel/segs',
-    badge: 'Spatial 3D Commerce',
+    image: '/hrms-dashboard.png',
   },
 ];
 

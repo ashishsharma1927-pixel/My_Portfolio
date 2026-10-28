@@ -1,20 +1,25 @@
 import React from 'react';
-import { Server, Database, Zap, Wrench, Cloud, Layers } from 'lucide-react';
+import { Server, Database, Zap, Cloud, Layers, ShieldCheck } from 'lucide-react';
 import { skillsData } from '../data/portfolioData';
 
 export const Skills: React.FC = () => {
   const getCategoryIcon = (title: string) => {
     switch (title) {
+      case 'Backend Architecture':
       case 'Backend':
         return <Server size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'Frontend & UI Engineering':
       case 'Frontend & 3D Interactive':
         return <Layers size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'Databases & Storage':
       case 'Databases':
         return <Database size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'Async, WebSockets & Caching':
       case 'Background Tasks & Caching':
         return <Zap size={18} style={{ color: 'var(--text-primary)' }} />;
-      case 'Testing & Development Tools':
-        return <Wrench size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'APIs, Payments & Security':
+        return <ShieldCheck size={18} style={{ color: 'var(--text-primary)' }} />;
+      case 'Cloud DevOps & Deployment':
       case 'Deployment & IDE':
         return <Cloud size={18} style={{ color: 'var(--text-primary)' }} />;
       default:
@@ -29,7 +34,7 @@ export const Skills: React.FC = () => {
           <span className="section-label">Toolkit</span>
           <h2 className="section-heading">Technologies I Work With</h2>
           <p className="section-subtitle">
-            A comprehensive technical toolkit spanning robust backend APIs, relational database architectures, and interactive 3D WebGL experiences.
+            A comprehensive technical toolkit spanning robust backend APIs, real-time WebSocket telemetry, relational database schemas, and cloud SaaS deployments.
           </p>
         </div>
 

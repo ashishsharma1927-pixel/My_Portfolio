@@ -47,6 +47,10 @@ Welcome to the personal developer portfolio of **Ashish Sharma**, a **Python Bac
    - **Testing & Quality**: Postman, Debugging, API Status Testing
    - **Deployment & Tools**: Render, Vercel, Docker, Git, GitHub
 4. **Featured Projects**:
+   - **OmniPilot Studio OS**: All-in-One AI Content Generation & SaaS Growth Operating System featuring real-time WebSockets telemetry, Stripe subscriptions, and sub-second non-blocking email dispatching.
+     - 🔗 [Live Studio OS Demo](https://omnipilot-nmko.onrender.com/)
+     - 💻 [GitHub Repository](https://github.com/ashishsharma1927-pixel/OmniPilot)
+     - 🔑 Instant Demo Account: `test@yopmail.com` | `Test@123`
    - **HRMS — Human Resource Management System**: Employee and department management platform powered by Django REST Framework APIs.
      - 🔗 [Live Frontend Application](https://hrms-frontend-cr1h.vercel.app/login)
      - 🔗 [Backend API Service](https://hrms-backend-yj0q.onrender.com)
